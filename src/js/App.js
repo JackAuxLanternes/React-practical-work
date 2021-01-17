@@ -9,27 +9,23 @@ import '../css/App.css';
 import {Navbar, NavbarBrand} from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/NavbarCollapse";
 
-import CityWeather from "./CityWeather";
-import CityCode from "./CityCode";
+import RandomUser from "./RandomUser";
 
 function App(){
-    let [cityCode, setCityCode] = useState(null);
-    let [weather, setWeather] = useState("No city selected");
+    let [someoneName, setSomeoneName] = useState("");
 
     return(
         <div className="app">
             {/*<Header/>*/}
             <Container className="p-3">
                 <Jumbotron>
-                    <h1 className="header">Pokémon need to live in suitable environments,
-                        find out what Pokémon you might find in these big cities
+                    <h1 className="header">
+                        There is a lot of websites in the world, even with peoples name, let's see that together
                     </h1>
-                    *Non-exhaustive list
+                    *People names are randomly generate, don't mind if you think it's someone you know
                 </Jumbotron>
 
-                <CityCode cityName="44418" setCityCode={setCityCode}/>
-
-                <CityWeather cityCode={cityCode} setWeather={setWeather}/>
+                <RandomUser setSomeone={setSomeoneName}/>
 
             </Container>
         </div>
@@ -48,10 +44,10 @@ const Header = () => (
                         Show data of
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <Button>Pokémon API</Button>
+                                <Button>Random User API</Button>
                             </li>
                             <li className="nav-item">
-                                <Button>Weather API</Button>
+                                <Button>Domain Names Search API</Button>
                             </li>
                         </ul>
                     </NavbarCollapse>
